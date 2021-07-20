@@ -14,8 +14,11 @@ public class MainApp {
         String pnr = scanner.nextLine();
 
         PNRRequestExecutor requestExecutor = PNRRequestExecutor.getExecutor();
-
+        
+        //create request with pnr
         Request request = requestExecutor.createRequestForPNR(pnr);
+        
+        //execute and get result
         PNRStatus pnrStatus = requestExecutor.executeRequest(request);
 
         if (null != pnrStatus) {
